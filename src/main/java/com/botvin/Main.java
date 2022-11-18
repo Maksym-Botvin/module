@@ -1,8 +1,6 @@
 package com.botvin;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,9 +33,15 @@ public class Main {
         // 8. Вивести масив на екран
         raiseToCubeEach3Number(randomArray);
 
+        System.out.println();
+
+        Lock lock = new Lock(randomArray);
+        lock.printArray(randomArray); // відобразили масив
+
+        lock.getArray()[0] = 10;    // змінюємо значення елемента масива
+        lock.printArray(randomArray); // та відображаємо його, елемент масиву не повинен змінитися
 
     }
-
 
     static void checkSize(int i) {
         if (i <= 0 || i > 10) {
@@ -89,6 +93,4 @@ public class Main {
         }
         System.out.println(Arrays.toString(intArray) + " array where each 3rd number raised to 3 power");
     }
-
-
 }
