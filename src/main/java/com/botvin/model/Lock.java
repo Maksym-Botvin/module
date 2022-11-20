@@ -1,9 +1,10 @@
-package com.botvin;
+package com.botvin.model;
 
 import java.util.Arrays;
 
-public class Lock {
-    private int[] array;
+public final class Lock {
+
+    private final int[] array;
 
     public int[] getArray() {
         int[] arrayClone = Arrays.copyOf(array, array.length);
